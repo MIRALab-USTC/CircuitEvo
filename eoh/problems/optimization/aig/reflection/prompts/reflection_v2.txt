@@ -1,0 +1,34 @@
+[Background Information]
+In logic synthesis, a key task is to find an And-Inverter Graph (AIG) that satisfies a given functionality while minimizing the number of nodes. We use the following program format to represent an AIG network: For example, for a Boolean function 'po0 = pi0 * pi1 * pi2', the corresponding program is as follows:
+
+INORDER = pi0 pi1 pi2;
+OUTORDER = po0;
+new_n4_ = pi0 * pi1;
+new_n5_ = new_n4_ * pi2;
+po0 = new_n5_;
+
+The program consists of two parts:
+1.Input and Output Declarations: These lines include 'INORDER' and 'OUTORDER', which specify the input and output variables.
+2.Program Body: This section demonstrates how the output is derived step by step using intermediate variables (denoted as 'new') and input variables (denoted as 'pi'). Each intermediate variable corresponds to a node in the AIG network. In an AIG network, each node has two inputs, and intermediate variables are computed using Boolean operations such as AND (*), OR (+), and NOT (!). The program is constructed to derive the final output (i.e., the functionality) through a sequence of intermediate steps. The goal is to minimize the number of nodes in the resulting AIG while ensuring it's output are functionally equivalent to the original Boolean expressions.
+
+[Your task]
+I have a program with low accuracy and need assistance in identifying the reason for the low accuracy.
+
+The program is as follows:
+{program}
+
+The accuracy of the program is: 
+{accuracy}. 
+
+Please reflect on the program body that led to low accuracy and how it could be improved. Reflections should be specific to the line. 
+For example, some useful reflections are like:
+    Altering Logical Operators and Input Variables: Review and adjust the logical operators and input/intermediate variables within specific lines to improve accuracy;
+    Adding some Lines (i.e., substructures) for diversification: When certain lines are too brief, consider adding new lines to provide additional functionality. 
+Note that your reflection must ensure the completness of the program. If you want to add some lines, please ensure that the inserted lines are connected with the previous and following lines to ensure the legitimacy of the program.
+
+
+[Additional information]
+Please give the detailed reflections in an ordered list. Your reflection should be diverse and creative. The reflection output should be structed as:
+
+### Reflections on Low Accuracy Program
+[The reflection content]

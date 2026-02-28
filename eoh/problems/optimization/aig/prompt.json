@@ -1,0 +1,9 @@
+{
+"prompt_task": "I need assistance in designing a novel algorithm to generate a program that represents a multi-output And-Inverter Graph (AIG) . **The program should take the input variables f'{input_variables}' and output variables f'{output variables} as input, and output the corresponding Boolean expression for each output variable, which is represented as a combination of the input variables and intermediate computed variables** . The goal is to minimize the number of nodes in the resulting AIG while ensuring it's output are functionally equivalent to the original Boolean expressions.",
+"prompt_func_name": "AIGerator",
+"prompt_func_inputs": ["f'{input_variables}'", "f'{output_variables}'"],
+"prompt_func_outputs": ["f'{output_variables}'"],
+"prompt_inout_inf": "Note that the intermediate variables are derived from either the aforementioned intermediate variables or the input variables. These intermediate variables are constrained to be represented by no more than two variables. The operators used include AND (*)`, OR (+), and NOT (!). The number of nodes in the AIG program is determined by the total number of lines in the program.",
+"prompt_other_inf": "The novel function should be sufficiently complex in order to achieve better performance. It is important to ensure self-consistency.."
+}
+    

@@ -1,0 +1,22 @@
+[Background Information]
+In logic synthesis, a key task is to find an And-Inverter Graph (AIG) that satisfies a given functionality while minimizing the number of nodes. We use the following program format to represent an AIG network: For example, for a Boolean function 'po0 = pi0 * pi1 * pi2', the corresponding program is as follows:
+
+INORDER = pi0 pi1 pi2;
+OUTORDER = po0;
+new_n4_ = pi0 * pi1;
+new_n5_ = new_n4_ * pi2;
+po0 = new_n5_;
+
+The program consists of two parts:
+1.Input and Output Declarations: These lines include 'INORDER' and 'OUTORDER', which specify the input and output variables.
+2.Program Body: This section demonstrates how the output is derived step by step using intermediate variables (denoted as 'new') and input variables (denoted as 'pi'). Each intermediate variable corresponds to a node in the AIG network. In an AIG network, each node has two inputs, and intermediate variables are computed using Boolean operations such as AND (*), OR (+), and NOT (!). The program is constructed to derive the final output (i.e., the functionality) through a sequence of intermediate steps. The goal is to minimize the number of nodes in the resulting AIG while ensuring it's output are functionally equivalent to the original Boolean expressions.
+
+[Your Task]
+We have an AIG program in [The Original Program] that lacks certain critical structures, resulting in suboptimal performance. 
+To enhance its effectiveness, we are providing additional AIG programs in [The Additional Programs] containing these essential structures. 
+Your task is to generate a new program based on the additional programs that integrates these essential structures. 
+Note that the generated program any outputs (the number may not larger than 1) in [The Additional Programs] defined as 'poi = 1' or 'poi = 0' must preserve in the generated program's structure.
+Moreover, the generated program must be a complete progarm which includes 'Input and Output Declarations' and 'Program Body'. 
+
+[Additional Information]
+Please just give the generated program (not the original program) without any additional explanations. 

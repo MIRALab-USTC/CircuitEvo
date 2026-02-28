@@ -1,0 +1,4 @@
+The generated program must adhere to the specified format mentioned above, where the input variables in the Program Body must be consistent with the input variables in 'INORDER' and each intermediate variable has exactly two input nodes.
+It is important to note that the number of nodes in an AIG network corresponds to the number of lines in the program body.
+Importantly, ensuring the functional equivalence of the program to the provided program remains the most critical constraint.
+Do not give additional explanations.

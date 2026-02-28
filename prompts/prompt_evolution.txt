@@ -1,0 +1,20 @@
+e1: [Evolutionary Generation] I have {program_number} existing programs as follows:
+{prompt_indiv},
+Please help me create a new program that has a totally different Program Body from the given ones but can be motivated from them. You can generate new Program Bodies by mixing parts of the Program Body from the given programs, similar to the crossover operation in genetic algorithms.
+Note that the new generated program must adhere to the [Constraints]. Do not give additional explanations.
+
+e2: [Evolutionary Generation] I have {program_number} existing programs as follows:
+{prompt_indiv},
+Please help me create a new program that has a totally different Program Body from the given ones and should be as complex as possible.
+Note that the new generated program must adhere to the [Constraints]. Do not give additional explanations.
+
+m1: [Evolutionary Generation] I have one program as follows:
+{prompt_indiv},
+Please assist me in creating a new program that has a different Program Body but can be a modified version of the program provided. You can modify the program by selectively adding or removing the NOT operator (!) before some variables, changing some AND operators (*) to OR (+), or vice versa, similar to the mutation process in genetic algorithms.
+Note that the new generated program must adhere to the [Constraints]. Do not give additional explanations.
+
+m2: [Evolutionary Generation] I have one program as follows:
+{prompt_indiv},
+Please identify the main program structures and assist me in creating a new program that has a different structure of the program provided using the main structures.
+Note that the new generated program must adhere to the [Constraints]. Do not give additional explanations.
+

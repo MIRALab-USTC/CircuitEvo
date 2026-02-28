@@ -1,0 +1,17 @@
+[Background] In logic synthesis, a key task is to find an And-Inverter Graph (AIG) that satisfies a given functionality while minimizing the number of nodes.
+We use the following program format to represent an AIG network:
+For example, for a Boolean function 'po0 = pi0 * pi1 * pi2', the corresponding program is as follows:
+```
+INORDER = pi0 pi1 pi2;
+OUTORDER = po0;
+new_n4_ = pi0 * pi1;
+new_n5_ = new_n4_ * pi2;
+po0 = new_n5_;
+```
+The program consists of two parts:
+    1.Input and Output Declarations: These lines include 'INORDER' and 'OUTORDER', which specify the input and output variables.
+    2.Program Body: This section demonstrates how the output is derived step by step using intermediate variables (denoted as 'new') and input variables (denoted as 'pi'). Each intermediate variable corresponds to a node in the AIG network.
+In an AIG network, each node has two inputs, and intermediate variables are computed using Boolean operations such as AND (*), OR (+), and NOT (!). The program is constructed to derive the final output (i.e., the functionality) through a sequence of intermediate steps.
+
+[Constraints] Now we want to discover an AIG network with 13 inputs and 6 outputs. There are some prior constraints on the AIG network:
+{constraints}

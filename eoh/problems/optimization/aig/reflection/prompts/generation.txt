@@ -1,0 +1,51 @@
+[Background Information]
+In logic synthesis, a key task is to find an And-Inverter Graph (AIG) that satisfies a given functionality while minimizing the number of nodes. We use the following program format to represent an AIG network: For example, for a Boolean function 'po0 = pi0 * pi1 * pi2', the corresponding program is as follows:
+
+```
+INORDER = pi0 pi1 pi2;
+OUTORDER = po0;
+new_n4_ = pi0 * pi1;
+new_n5_ = new_n4_ * pi2;
+po0 = new_n5_;
+```
+
+The program consists of two parts:
+1.Input and Output Declarations: These lines include 'INORDER' and 'OUTORDER', which specify the input and output variables.
+2.Program Body: This section demonstrates how the output is derived step by step using intermediate variables (denoted as 'new') and input variables (denoted as 'pi'). Each intermediate variable corresponds to a node in the AIG network. In an AIG network, each node has two inputs, and intermediate variables are computed using Boolean operations such as AND (*), OR (+), and NOT (!). The program is constructed to derive the final output (i.e., the functionality) through a sequence of intermediate steps. The goal is to minimize the number of nodes in the resulting AIG while ensuring it's output are functionally equivalent to the original Boolean expressions.
+
+[Your Role]
+We have an AIG program that lacks certain critical structures, resulting in suboptimal performance. To enhance its effectiveness, you should integrate the 'program' in reflection with the original program. Specifically, you should follow these steps:
+
+1. Incorporate Intermediate Variables: Insert the intermediate variables from the generated program into the body of the original program, ensuring they are placed before the output declarations.
+2. Combine Corresponding Outputs: Merge the outputs of original program and generated program by applying logical operations between the original program's output (po) and the generated program's output (po') based on the [Explanation] in reflection. The available combination methods include:
+   a. po * po'; b. po + po'; c. !po * po'; d. !po + po'; e. po * !po'; f. po + !po'; g. !po * !po'; h. !po + !po'
+​	Here, !po denotes the negation of po.
+For example, Given the original AIG program:
+```
+INORDER = pi0 pi1 pi2;
+OUTORDER = po0 po1;
+new_n4_ = pi0 * pi1;
+new_n5_ = new_n4_ * pi2;
+po0 = new_n5_;
+po1 = pi0;
+```
+And the generated program:
+```
+INORDER = pi0 pi1 pi2;
+OUTORDER = po0;
+new_n40_ = pi0 * pi2;
+po0 = new_n40_;
+```
+To combine these programs using the 'po * po' method, the resulting program would be:
+```
+INORDER = pi0 pi1 pi2;
+OUTORDER = po0 po1;
+new_n4_ = pi0 * pi1;
+new_n5_ = new_n4_ * pi2;
+new_n40_ = pi0 * pi2;
+po0 = new_n5_ * new_n40_;
+po1 = pi0;
+```
+
+[Additional Information]
+Please just give the full program without any additional explanations.
